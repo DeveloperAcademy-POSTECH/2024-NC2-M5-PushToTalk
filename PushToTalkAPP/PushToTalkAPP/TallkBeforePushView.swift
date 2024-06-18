@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct TallkBeforePushView: View {
-    @State private var isImageTapped: Bool = false
+    
+    @GestureState private var isPressing = false
+    
     var body: some View {
+        
+        let defaultImage = "Push"
+        let pressedImage = "Pushopacity"
+        
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
            
             ZStack{
@@ -18,17 +24,22 @@ struct TallkBeforePushView: View {
                 Text("Kumi")
                     .font(.custom("DOSSaemmul", size: 30))
             }
-            Button(action: {
-                self.isImageTapped.toggle()
-            }) {
-                VStack {
-                    Image(self.isImageTapped == true ? "Push" : "Push")
-                }
-                
-            }
+            Image(isPressing ? pressedImage : defaultImage)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+                .gesture(
+                    LongPressGesture(minimumDuration: 0.5)
+                        .updating($isPressing) { currentState, gestureState, transaction in
+                            gestureState = currentState
+                        }
+                )
+            
+        
+            Text(isPressing ? "Listening.." : "Push!")
                 .padding()
-            Text("Push!")
-                .font(.custom("DOSSaemmul", size: 30))
+                .font(.custom("DOSSaemmul", size:30))
+           
             Text("15/100")
                 .font(.custom("DOSSaemmul", size: 24))
                 
