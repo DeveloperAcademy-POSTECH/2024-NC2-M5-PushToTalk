@@ -61,7 +61,7 @@ struct LvlDetailView: View {
                         Text("Push! 1000번을 달성하세요").font(.custom("DOSSaemmul", size: 18))
                     }
                 }.padding(.leading, 20)
-            }
+            }.padding(.top, 20)
             
         }.scrollIndicators(.hidden)
             .toolbar {

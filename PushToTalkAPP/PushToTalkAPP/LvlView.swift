@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LvlView: View {
-    @State var pushCount: Int = 510 {
+    @State var pushCount: Int = 0 {
         didSet {
             updateLevel()
         }
