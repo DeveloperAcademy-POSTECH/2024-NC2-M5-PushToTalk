@@ -20,11 +20,11 @@ struct LvlView: View {
      "집전화" : "Lv.3 집전화",
      "삐삐":"Lv.4 삐삐",
      "씨티폰":"Lv.5 씨티폰",
-     "폴더폰":"Lv.6 폴더폰",
+     "폴더폰":"Lv.6 폴더폰", 
      "스마트폰":"Lv.7 스마트폰"]
     
     var body: some View {
-        NavigationView {
+        NavigationStack{
             VStack{
                 HStack {
                     Spacer()
@@ -34,10 +34,11 @@ struct LvlView: View {
                             .underline()
                             .foregroundColor(.black)
                     }
-                }.padding(.top, 51)
+                }
+                .padding(.top, 50)
                 Text("Jane의 현재 Level")
                     .font(.custom("DOSSaemmul", size: 28))
-                    .padding(.top, 82)
+                    .padding(.top, 52)
                 
                 if let imageName = levelImage[currentLevel] {
                     Image(currentLevel)
@@ -57,15 +58,17 @@ struct LvlView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, 50)
                 Spacer()
-            }.padding()
+            }
+            .padding()
                 .onAppear {
                     updateLevel()
                 }
                 .onChange(of: pushCount) { _ in
                     updateLevel()
                 }
-        }.navigationTitle("Lvl.List")
+        }.navigationBarTitleDisplayMode(.inline)
     }
+    
     private func updateLevel() {
         switch pushCount {
         case 0..<100:
