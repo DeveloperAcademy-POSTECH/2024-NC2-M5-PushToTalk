@@ -19,8 +19,8 @@ class ChannelClass {
 struct ContentView: View {
     @StateObject private var pushToTalkManager = PushToTalkManager()
     var channelUUID = UUID()
-    
-    @State private var selectedIndex: Int = 0
+//    @Binding var pushCount: Int
+    @State private var selectedIndex: Int = 1
     let numberOfPages = 3
     
     var body: some View {
@@ -83,7 +83,7 @@ struct ContentView: View {
 
 struct ColorView: View {
     let index: Int
-
+//    @Binding var pushCount: Int
     var body: some View {
         ZStack {
             switch index {
@@ -92,7 +92,7 @@ struct ColorView: View {
             case 1:
                 LvlView()
             case 2:
-                Color.blue
+                TallkBeforePushView()
             default:
                 Color.white
             }
@@ -101,11 +101,11 @@ struct ColorView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(pushCount: $pushCount)
+//    }
+//}
 
 // Placeholder functions
 func getCachedChannelDescriptor(_ channelUUID: UUID) -> PTChannelDescriptor {

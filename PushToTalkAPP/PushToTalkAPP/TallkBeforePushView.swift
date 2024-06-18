@@ -32,6 +32,7 @@ struct TallkBeforePushView: View {
                     LongPressGesture(minimumDuration: 0.5)
                         .updating($isPressing) { currentState, gestureState, transaction in
                             gestureState = currentState
+//                            pushCount += 1
                         }
                 )
             
@@ -48,9 +49,6 @@ struct TallkBeforePushView: View {
     }
 }
 
-#Preview {
-    TallkBeforePushView()
-}
 
 
 

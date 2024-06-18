@@ -20,7 +20,7 @@ struct Friend: Identifiable {
 }
 struct FriendListView: View {
 //    let PTTfont = "DOSSaemmul"
-    @State private var friends: [Friend] = [
+    @State var friends: [Friend] = [
             Friend(name: "Kumi", isConnected: true),
             Friend(name: "Hale", isConnected: false),
             Friend(name: "Boo", isConnected: false),
@@ -63,7 +63,7 @@ struct FriendListView: View {
                                 
                                 Rectangle()
                                     .frame(width: 18, height: 18)
-                                    .foregroundColor(friend.isConnected ? .green : .red)
+                                    .foregroundColor(friend.isConnected ? .friendListGreen : .friendListRed)
                                     .padding(.bottom, 18)
                             }
                         }.padding(.bottom, 35)
