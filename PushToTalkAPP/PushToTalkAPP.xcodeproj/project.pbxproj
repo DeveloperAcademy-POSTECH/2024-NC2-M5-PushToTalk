@@ -19,6 +19,7 @@
 		895327DA2C21A05E0092C6EA /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */; };
 		895327DB2C21A05E0092C6EA /* LvlDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327D92C21A05E0092C6EA /* LvlDetailView.swift */; };
 		895327DF2C21A5280092C6EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 895327DE2C21A5280092C6EA /* GoogleService-Info.plist */; };
+		895327E12C21C6C80092C6EA /* PushCounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E02C21C6C80092C6EA /* PushCounterManager.swift */; };
 		B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavigationBarView.swift; path = "Preview Content/CustomNavigationBarView.swift"; sourceTree = "<group>"; };
 		895327D92C21A05E0092C6EA /* LvlDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LvlDetailView.swift; path = "Preview Content/LvlDetailView.swift"; sourceTree = "<group>"; };
 		895327DE2C21A5280092C6EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		895327E02C21C6C80092C6EA /* PushCounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCounterManager.swift; sourceTree = "<group>"; };
 		B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TallkBeforePushView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				895327D62C219FD00092C6EA /* LvlView.swift */,
 				895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */,
 				895327D92C21A05E0092C6EA /* LvlDetailView.swift */,
+				895327E02C21C6C80092C6EA /* PushCounterManager.swift */,
 			);
 			path = PushToTalkAPP;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				895327BB2C21371B0092C6EA /* PushToTalkManager.swift in Sources */,
 				895327DA2C21A05E0092C6EA /* CustomNavigationBarView.swift in Sources */,
 				895327DB2C21A05E0092C6EA /* LvlDetailView.swift in Sources */,
+				895327E12C21C6C80092C6EA /* PushCounterManager.swift in Sources */,
 				895327BD2C2137C70092C6EA /* FriendListView.swift in Sources */,
 				895327AF2C2137020092C6EA /* ContentView.swift in Sources */,
 				B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */,

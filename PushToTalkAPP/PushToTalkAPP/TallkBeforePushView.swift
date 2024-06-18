@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TallkBeforePushView: View {
-    
+    @EnvironmentObject var pushCountManager: PushCountManager
     @GestureState private var isPressing = false
+    
+    
     
     var body: some View {
         
@@ -17,7 +19,7 @@ struct TallkBeforePushView: View {
         let pressedImage = "Pushopacity"
         
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
-           
+            
             ZStack{
                 Image("Friend")
                     .padding(.vertical, 30)
@@ -29,21 +31,23 @@ struct TallkBeforePushView: View {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
                 .gesture(
-                    LongPressGesture(minimumDuration: 0.5)
+                    LongPressGesture(minimumDuration: 2.0)
                         .updating($isPressing) { currentState, gestureState, transaction in
                             gestureState = currentState
-//                            pushCount += 1
+                            pushCountManager.pushCount += 1
+                            //                            pushCount += 1
                         }
+                        
                 )
             
-        
+            
             Text(isPressing ? "Listening.." : "Push!")
                 .padding()
                 .font(.custom("DOSSaemmul", size:30))
-           
-            Text("15/100")
+            
+            Text("\(pushCountManager.getCurrentPushCount())/\(pushCountManager.getMaxCount())")
                 .font(.custom("DOSSaemmul", size: 24))
-                
+            
         }
         .padding(.bottom, 60)
     }
@@ -52,6 +56,6 @@ struct TallkBeforePushView: View {
 
 
 
-    
-    
+
+
 //https://stackoverflow.com/questions/62220494/swiftui-how-to-change-the-buttons-image-on-click
