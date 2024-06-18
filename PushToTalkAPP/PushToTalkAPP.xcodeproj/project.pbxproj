@@ -14,6 +14,7 @@
 		895327BB2C21371B0092C6EA /* PushToTalkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327BA2C21371B0092C6EA /* PushToTalkManager.swift */; };
 		895327BD2C2137C70092C6EA /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327BC2C2137C70092C6EA /* FriendListView.swift */; };
 		895327BF2C2137EA0092C6EA /* DOSSaemmul.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 895327BE2C2137EA0092C6EA /* DOSSaemmul.ttf */; };
+		895327D52C219EAF0092C6EA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 895327D42C219EAF0092C6EA /* FirebaseFirestore */; };
 		B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895327D52C219EAF0092C6EA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,9 @@
 			dependencies = (
 			);
 			name = PushToTalkAPP;
+			packageProductDependencies = (
+				895327D42C219EAF0092C6EA /* FirebaseFirestore */,
+			);
 			productName = PushToTalkAPP;
 			productReference = 895327A92C2137020092C6EA /* PushToTalkAPP.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 895327A02C2137020092C6EA;
+			packageReferences = (
+				895327D32C219EAF0092C6EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 895327AA2C2137020092C6EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -368,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		895327D32C219EAF0092C6EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		895327D42C219EAF0092C6EA /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 895327D32C219EAF0092C6EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 895327A12C2137020092C6EA /* Project object */;
 }
