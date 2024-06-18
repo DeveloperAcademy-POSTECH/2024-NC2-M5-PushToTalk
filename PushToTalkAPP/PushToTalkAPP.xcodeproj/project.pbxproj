@@ -20,6 +20,9 @@
 		895327DB2C21A05E0092C6EA /* LvlDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327D92C21A05E0092C6EA /* LvlDetailView.swift */; };
 		895327DF2C21A5280092C6EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 895327DE2C21A5280092C6EA /* GoogleService-Info.plist */; };
 		895327E12C21C6C80092C6EA /* PushCounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E02C21C6C80092C6EA /* PushCounterManager.swift */; };
+		895327E32C21D6480092C6EA /* CustomAlertButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E22C21D6480092C6EA /* CustomAlertButtonView.swift */; };
+		895327E62C21D8F00092C6EA /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E52C21D8F00092C6EA /* CustomAlertView.swift */; };
+		895327E82C21DB4E0092C6EA /* CustomAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */; };
 		B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,9 @@
 		895327D92C21A05E0092C6EA /* LvlDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LvlDetailView.swift; path = "Preview Content/LvlDetailView.swift"; sourceTree = "<group>"; };
 		895327DE2C21A5280092C6EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		895327E02C21C6C80092C6EA /* PushCounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCounterManager.swift; sourceTree = "<group>"; };
+		895327E22C21D6480092C6EA /* CustomAlertButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButtonView.swift; sourceTree = "<group>"; };
+		895327E52C21D8F00092C6EA /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertModifier.swift; sourceTree = "<group>"; };
 		B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TallkBeforePushView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +79,7 @@
 		895327AB2C2137020092C6EA /* PushToTalkAPP */ = {
 			isa = PBXGroup;
 			children = (
+				895327E42C21D8DC0092C6EA /* Alert */,
 				895327DE2C21A5280092C6EA /* GoogleService-Info.plist */,
 				895327C12C2138230092C6EA /* Info.plist */,
 				895327C02C2138080092C6EA /* PushToTalkAPP.entitlements */,
@@ -80,7 +87,6 @@
 				895327AC2C2137020092C6EA /* PushToTalkAPPApp.swift */,
 				895327AE2C2137020092C6EA /* ContentView.swift */,
 				895327B02C2137040092C6EA /* Assets.xcassets */,
-				895327B22C2137040092C6EA /* Preview Content */,
 				895327BA2C21371B0092C6EA /* PushToTalkManager.swift */,
 				895327BC2C2137C70092C6EA /* FriendListView.swift */,
 				B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */,
@@ -88,6 +94,7 @@
 				895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */,
 				895327D92C21A05E0092C6EA /* LvlDetailView.swift */,
 				895327E02C21C6C80092C6EA /* PushCounterManager.swift */,
+				895327B22C2137040092C6EA /* Preview Content */,
 			);
 			path = PushToTalkAPP;
 			sourceTree = "<group>";
@@ -98,6 +105,16 @@
 				895327B32C2137040092C6EA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		895327E42C21D8DC0092C6EA /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				895327E22C21D6480092C6EA /* CustomAlertButtonView.swift */,
+				895327E52C21D8F00092C6EA /* CustomAlertView.swift */,
+				895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,12 +197,15 @@
 			files = (
 				895327BB2C21371B0092C6EA /* PushToTalkManager.swift in Sources */,
 				895327DA2C21A05E0092C6EA /* CustomNavigationBarView.swift in Sources */,
+				895327E62C21D8F00092C6EA /* CustomAlertView.swift in Sources */,
 				895327DB2C21A05E0092C6EA /* LvlDetailView.swift in Sources */,
 				895327E12C21C6C80092C6EA /* PushCounterManager.swift in Sources */,
 				895327BD2C2137C70092C6EA /* FriendListView.swift in Sources */,
+				895327E82C21DB4E0092C6EA /* CustomAlertModifier.swift in Sources */,
 				895327AF2C2137020092C6EA /* ContentView.swift in Sources */,
 				B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */,
 				895327AD2C2137020092C6EA /* PushToTalkAPPApp.swift in Sources */,
+				895327E32C21D6480092C6EA /* CustomAlertButtonView.swift in Sources */,
 				895327D72C219FD00092C6EA /* LvlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
