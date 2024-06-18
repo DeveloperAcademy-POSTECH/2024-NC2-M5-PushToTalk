@@ -7,6 +7,12 @@
 //
 
 import SwiftUI
+
+struct FriendList: Identifiable {
+    let id = UUID()
+    let name : String
+}
+
 struct Friend: Identifiable {
     let id = UUID()
     let name: String
@@ -15,10 +21,10 @@ struct Friend: Identifiable {
 struct FriendListView: View {
 //    let PTTfont = "DOSSaemmul"
     @State private var friends: [Friend] = [
-            Friend(name: "Kumi", isConnected: false),
-            Friend(name: "Hale", isConnected: true),
+            Friend(name: "Kumi", isConnected: true),
+            Friend(name: "Hale", isConnected: false),
             Friend(name: "Boo", isConnected: false),
-            Friend(name: "Arthur", isConnected: true),
+            Friend(name: "Arthur", isConnected: false),
             Friend(name: "Keenie", isConnected: false)
         ]
     var body: some View {
