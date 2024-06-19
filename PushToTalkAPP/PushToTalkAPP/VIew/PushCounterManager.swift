@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 class PushCountManager: ObservableObject {
-    @Published var pushCount: Int = 0 {
+    @AppStorage("pushCount") var pushCount: Int = 0 {
         didSet {
             updateLevel()
         }

@@ -21,7 +21,7 @@ struct Friend: Identifiable {
 
 class FriendViewModel: ObservableObject {
     @Published var friends: [Friend] = [
-        Friend(name: "Kumi", isConnected: true),
+        Friend(name: "Kumi", isConnected: false),
         Friend(name: "Hale", isConnected: false),
         Friend(name: "Boo", isConnected: false),
         Friend(name: "Arthur", isConnected: false),
@@ -39,6 +39,8 @@ struct FriendListView: View {
     @State private var isPresented: Bool = false
     @State private var selectedFriend: Friend?
     @StateObject private var viewModel = FriendViewModel()
+    @StateObject private var pttManager = PushToTalkManager()
+    @State private var channelUUID = UUID(uuidString: "133D01EA-9D9D-4174-BD3D-5BCB82358334")!
     
     var body: some View {
         VStack(alignment: .leading, spacing: 50) {
@@ -80,6 +82,13 @@ struct FriendListView: View {
                                     CustomAlertView(title: "\(selectedFriend?.name ?? "")님과\n연결을 끊으시겠습니까?", content: "") {
                                         CustomAlertButtonView(type: .연결끊기, isPresented: $isPresented) {
                                             viewModel.toggleConnection(for: selectedFriend!)
+                                            Task {
+                                                do {
+                                                    try await pttManager.leaveChannel()
+                                                } catch {
+                                                    print("Failed to join channel: \(error)")
+                                                }
+                                            }
                                             print("연결 끊기 눌림")
                                         }
                                     } cancelBtn: {
@@ -92,6 +101,13 @@ struct FriendListView: View {
                                     CustomAlertView(title: "\(selectedFriend?.name ?? "")님과\n연결하시겠습니까?", content: "") {
                                         CustomAlertButtonView(type: .연결하기, isPresented: $isPresented) {
                                             viewModel.toggleConnection(for: selectedFriend!)
+                                            Task {
+                                                do {
+                                                    try await pttManager.joinChannel(channelUUID: channelUUID)
+                                                } catch {
+                                                    print("Failed to join channel: \(error)")
+                                                }
+                                            }
                                             print("연결 하기 눌림")
                                         }
                                     } cancelBtn: {
@@ -114,6 +130,9 @@ struct FriendListView: View {
             .padding(.horizontal, 52)
             
             Spacer()
+        }.onAppear {
+            // Initialize the manager when the view appears
+            pttManager.initialize()
         }
     }
 }

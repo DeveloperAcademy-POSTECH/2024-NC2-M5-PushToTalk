@@ -31,7 +31,7 @@ struct ContentView: View {
                     ForEach(0..<numberOfPages) { index in
                         Circle()
                             .frame(width: 8, height: 8)
-                            .foregroundColor(selectedIndex == index ? .blue : .gray)
+                            .foregroundColor(selectedIndex == index ? .black : .gray)
                             .animation(.easeInOut(duration: 0.3), value: selectedIndex)
                     }
                 }

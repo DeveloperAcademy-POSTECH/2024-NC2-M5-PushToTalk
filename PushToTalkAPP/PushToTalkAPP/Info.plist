@@ -6,5 +6,14 @@
 	<array>
 		<string>DOSSaemmul.ttf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>push-to-talk</string>
+		<string>remote-notification</string>
+		<string>voip</string>
+	</array>
+	<key>noti</key>
+	<string></string>
 </dict>
 </plist>

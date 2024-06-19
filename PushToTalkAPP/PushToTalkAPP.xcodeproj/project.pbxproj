@@ -23,6 +23,8 @@
 		895327E32C21D6480092C6EA /* CustomAlertButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E22C21D6480092C6EA /* CustomAlertButtonView.swift */; };
 		895327E62C21D8F00092C6EA /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E52C21D8F00092C6EA /* CustomAlertView.swift */; };
 		895327E82C21DB4E0092C6EA /* CustomAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */; };
+		895327EB2C228B5E0092C6EA /* PushToTalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327EA2C228B5E0092C6EA /* PushToTalkView.swift */; };
+		895327ED2C22B11F0092C6EA /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327EC2C22B11F0092C6EA /* AudioSession.swift */; };
 		B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		895327E22C21D6480092C6EA /* CustomAlertButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButtonView.swift; sourceTree = "<group>"; };
 		895327E52C21D8F00092C6EA /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertModifier.swift; sourceTree = "<group>"; };
+		895327EA2C228B5E0092C6EA /* PushToTalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToTalkView.swift; sourceTree = "<group>"; };
+		895327EC2C22B11F0092C6EA /* AudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
 		B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TallkBeforePushView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,7 @@
 				895327AC2C2137020092C6EA /* PushToTalkAPPApp.swift */,
 				895327AE2C2137020092C6EA /* ContentView.swift */,
 				895327BA2C21371B0092C6EA /* PushToTalkManager.swift */,
+				895327EC2C22B11F0092C6EA /* AudioSession.swift */,
 				895327B22C2137040092C6EA /* Preview Content */,
 			);
 			path = PushToTalkAPP;
@@ -121,6 +126,7 @@
 				895327D92C21A05E0092C6EA /* LvlDetailView.swift */,
 				895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */,
 				895327E02C21C6C80092C6EA /* PushCounterManager.swift */,
+				895327EA2C228B5E0092C6EA /* PushToTalkView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			files = (
 				895327BB2C21371B0092C6EA /* PushToTalkManager.swift in Sources */,
 				895327DA2C21A05E0092C6EA /* CustomNavigationBarView.swift in Sources */,
+				895327EB2C228B5E0092C6EA /* PushToTalkView.swift in Sources */,
 				895327E62C21D8F00092C6EA /* CustomAlertView.swift in Sources */,
 				895327DB2C21A05E0092C6EA /* LvlDetailView.swift in Sources */,
 				895327E12C21C6C80092C6EA /* PushCounterManager.swift in Sources */,
@@ -215,6 +222,7 @@
 				895327AD2C2137020092C6EA /* PushToTalkAPPApp.swift in Sources */,
 				895327E32C21D6480092C6EA /* CustomAlertButtonView.swift in Sources */,
 				895327D72C219FD00092C6EA /* LvlView.swift in Sources */,
+				895327ED2C22B11F0092C6EA /* AudioSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +361,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushToTalkAPP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱을 사용하기 위해 마이크 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -384,6 +395,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PushToTalkAPP/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "앱을 사용하기 위해 마이크 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
