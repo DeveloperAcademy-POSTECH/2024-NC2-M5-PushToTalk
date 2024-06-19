@@ -29,7 +29,7 @@ struct CustomAlertView: View {
         ZStack {
             Image("alertBackImage")
             VStack {
-                Text("Kumi님과\n연결을 끊으시겠습니까?")
+                Text(title)
                     .font(.custom("DOSSaemmul", size: 16))
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 20)

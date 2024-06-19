@@ -18,15 +18,27 @@ struct Friend: Identifiable {
     let name: String
     var isConnected: Bool
 }
-struct FriendListView: View {
-    @State private var isPresented: Bool = false
-    @State var friends: [Friend] = [
+
+class FriendViewModel: ObservableObject {
+    @Published var friends: [Friend] = [
         Friend(name: "Kumi", isConnected: true),
         Friend(name: "Hale", isConnected: false),
         Friend(name: "Boo", isConnected: false),
         Friend(name: "Arthur", isConnected: false),
         Friend(name: "Keenie", isConnected: false)
     ]
+    
+    func toggleConnection(for friend: Friend) {
+        if let index = friends.firstIndex(where: { $0.id == friend.id }) {
+            friends[index].isConnected.toggle()
+        }
+    }
+}
+
+struct FriendListView: View {
+    @State private var isPresented: Bool = false
+    @State private var selectedFriend: Friend?
+    @StateObject private var viewModel = FriendViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 50) {
@@ -53,26 +65,39 @@ struct FriendListView: View {
                 .padding(.horizontal, 20)
             
             VStack(alignment: .leading, spacing: 0) {
-                ForEach(friends) { friend in
+                ForEach(viewModel.friends.indices, id: \.self) { index in
+                    let friend = viewModel.friends[index]
                     HStack {
                         Text(friend.name)
                             .font(.custom("DOSSaemmul", size: 28))
                             .padding(.bottom, 20)
                             .onTapGesture {
-                                // 여기서 CustomAlert를 표시하도록 수정
+                                selectedFriend = friend
                                 isPresented.toggle()
                             }
                             .CustomAlert(isPresented: $isPresented) {
-                                CustomAlertView(title: "\(friend.name)님과\n연결을 끊으시겠습니까?", content: "") {
-                                    // 연결 끊기 버튼 눌렀을 때 실행할 액션
-                                    CustomAlertButtonView(type: .연결끊기, isPresented: $isPresented){
-                                        //                                        friends.first(where: { $0.id == friend.id })?.isConnected.toggle()
-                                        print("연결 끊기 눌림")
+                                if friend.isConnected {
+                                    CustomAlertView(title: "\(selectedFriend?.name ?? "")님과\n연결을 끊으시겠습니까?", content: "") {
+                                        CustomAlertButtonView(type: .연결끊기, isPresented: $isPresented) {
+                                            viewModel.toggleConnection(for: selectedFriend!)
+                                            print("연결 끊기 눌림")
+                                        }
+                                    } cancelBtn: {
+                                        CustomAlertButtonView(type: .취소, isPresented: $isPresented) {
+                                            print("취소 눌림")
+                                        }
                                     }
-                                } cancelBtn: {
-                                    // 취소 버튼 눌렀을 때 실행할 액션
-                                    CustomAlertButtonView(type: .취소, isPresented: $isPresented){
-                                        print("취소 눌림")
+                                }
+                                else{
+                                    CustomAlertView(title: "\(selectedFriend?.name ?? "")님과\n연결하시겠습니까?", content: "") {
+                                        CustomAlertButtonView(type: .연결하기, isPresented: $isPresented) {
+                                            viewModel.toggleConnection(for: selectedFriend!)
+                                            print("연결 하기 눌림")
+                                        }
+                                    } cancelBtn: {
+                                        CustomAlertButtonView(type: .취소, isPresented: $isPresented) {
+                                            print("취소 눌림")
+                                        }
                                     }
                                 }
                             }
