@@ -16,7 +16,7 @@ struct TallkBeforePushView: View {
     var body: some View {
         
         let defaultImage = "Push"
-        let pressedImage = "Pushopacity"
+        let pressedImage = "PushSpeaking"
         
         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
             
@@ -41,7 +41,7 @@ struct TallkBeforePushView: View {
                 )
             
             
-            Text(isPressing ? "Listening.." : "Push!")
+            Text(isPressing ? "Speaking.." : "Push!")
                 .padding()
                 .font(.custom("DOSSaemmul", size:30))
             
