@@ -38,8 +38,8 @@
 		895327C02C2138080092C6EA /* PushToTalkAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PushToTalkAPP.entitlements; sourceTree = "<group>"; };
 		895327C12C2138230092C6EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		895327D62C219FD00092C6EA /* LvlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LvlView.swift; sourceTree = "<group>"; };
-		895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavigationBarView.swift; path = "Preview Content/CustomNavigationBarView.swift"; sourceTree = "<group>"; };
-		895327D92C21A05E0092C6EA /* LvlDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LvlDetailView.swift; path = "Preview Content/LvlDetailView.swift"; sourceTree = "<group>"; };
+		895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		895327D92C21A05E0092C6EA /* LvlDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LvlDetailView.swift; sourceTree = "<group>"; };
 		895327DE2C21A5280092C6EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		895327E02C21C6C80092C6EA /* PushCounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCounterManager.swift; sourceTree = "<group>"; };
 		895327E22C21D6480092C6EA /* CustomAlertButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertButtonView.swift; sourceTree = "<group>"; };
@@ -79,21 +79,16 @@
 		895327AB2C2137020092C6EA /* PushToTalkAPP */ = {
 			isa = PBXGroup;
 			children = (
-				895327E42C21D8DC0092C6EA /* Alert */,
 				895327DE2C21A5280092C6EA /* GoogleService-Info.plist */,
 				895327C12C2138230092C6EA /* Info.plist */,
 				895327C02C2138080092C6EA /* PushToTalkAPP.entitlements */,
 				895327BE2C2137EA0092C6EA /* DOSSaemmul.ttf */,
+				895327B02C2137040092C6EA /* Assets.xcassets */,
+				895327E92C2266FC0092C6EA /* VIew */,
+				895327E42C21D8DC0092C6EA /* Alert */,
 				895327AC2C2137020092C6EA /* PushToTalkAPPApp.swift */,
 				895327AE2C2137020092C6EA /* ContentView.swift */,
-				895327B02C2137040092C6EA /* Assets.xcassets */,
 				895327BA2C21371B0092C6EA /* PushToTalkManager.swift */,
-				895327BC2C2137C70092C6EA /* FriendListView.swift */,
-				B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */,
-				895327D62C219FD00092C6EA /* LvlView.swift */,
-				895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */,
-				895327D92C21A05E0092C6EA /* LvlDetailView.swift */,
-				895327E02C21C6C80092C6EA /* PushCounterManager.swift */,
 				895327B22C2137040092C6EA /* Preview Content */,
 			);
 			path = PushToTalkAPP;
@@ -115,6 +110,19 @@
 				895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		895327E92C2266FC0092C6EA /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				895327BC2C2137C70092C6EA /* FriendListView.swift */,
+				B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */,
+				895327D62C219FD00092C6EA /* LvlView.swift */,
+				895327D92C21A05E0092C6EA /* LvlDetailView.swift */,
+				895327D82C21A05E0092C6EA /* CustomNavigationBarView.swift */,
+				895327E02C21C6C80092C6EA /* PushCounterManager.swift */,
+			);
+			path = VIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
