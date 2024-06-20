@@ -41,7 +41,7 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
         // Set headers
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("pushtotalk", forHTTPHeaderField: "apns-push-type")
-        request.setValue("<The app bundle id>.voip-ptt", forHTTPHeaderField: "apns-topic")
+        request.setValue("LeeYeeun-Kim.PushToTalkAPP.voip-ptt", forHTTPHeaderField: "apns-topic")
         request.setValue("10", forHTTPHeaderField: "apns-priority")
         request.setValue("0", forHTTPHeaderField: "apns-expiration")
         request.setValue("Bearer \(certificateKey)", forHTTPHeaderField: "Authorization")
@@ -266,7 +266,6 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             )
             try audioSession.setActive(true)
             print("오디오 세션 활성화됨")
-            //아니 왜 활성화 안됨??? setActive면 활성화되는거아닌가
         } catch {
             print("Failed to configure and activate audio session: \(error)")
         }
@@ -373,7 +372,7 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             return .leaveChannel
         }
         
-        // 누가 말했는지 알려면 수신자의 정보를 이렇게 return해줌
+        // 누가 말했는지 알려면 수신자의 정보를 이렇게 return해줌ㄴ
         let activeSpeakerImage = Image("globe")
         let participant = PTParticipant(name: activeSpeaker, image: UIImage(named: "globe"))
         return .activeRemoteParticipant(participant)

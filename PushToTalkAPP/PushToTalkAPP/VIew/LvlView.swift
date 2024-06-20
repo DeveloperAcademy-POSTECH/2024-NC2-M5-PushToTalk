@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LvlView: View {
     @EnvironmentObject var pushCountManager: PushCountManager
+    @StateObject private var pttManager = PushToTalkManager()
     
     var body: some View {
         VStack{
@@ -47,6 +48,10 @@ struct LvlView: View {
             Spacer()
         }
         .padding()
+        .onAppear {
+            // Initialize the manager when the view appears
+            pttManager.initialize()
+        }
     }
 }
 
