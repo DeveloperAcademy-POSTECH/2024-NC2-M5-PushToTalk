@@ -39,7 +39,7 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
     
     
     func sendPushNotificationToClient(token: String, activeSpeaker: String) {
-        let certificateKey = "PushToTalkApp.pem" //적용됨
+        let certificateKey = "PushToTalkApp.pem" //자신의 인증서 이름으로 바꿔야합니다
         
         // Prepare the JSON payload
         let json: [String: Any] = [
@@ -59,7 +59,7 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
         // Set headers
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("pushtotalk", forHTTPHeaderField: "apns-push-type")
-        request.setValue("LeeYeeun-Kim.PushToTalkAPP.voip-ptt", forHTTPHeaderField: "apns-topic")
+        request.setValue("LeeYeeun-Kim.PushToTalkAPP.voip-ptt", forHTTPHeaderField: "apns-topic") //앱 번들 Id로 바꾸세요
         request.setValue("10", forHTTPHeaderField: "apns-priority")
         request.setValue("0", forHTTPHeaderField: "apns-expiration")
         request.setValue("Bearer \(certificateKey)", forHTTPHeaderField: "Authorization")
