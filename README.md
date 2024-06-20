@@ -26,9 +26,7 @@ Attach videos if you are available
 
 ## :sparkles: Skills & Tech Stack
 
-<img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/> 
-<img src="https://img.shields.io/badge/SwiftUI-Black?style=flat&logo=swift&logoColor=black&color=%23096ad9"/>
-<img src="https://img.shields.io/badge/PushToTalk-Black?style=flat&logo=swift&logoColor=black&color=%F6D23B"/>
+<img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/><img src="https://img.shields.io/badge/SwiftUI-Black?style=flat&logo=swift&logoColor=black&color=%23096ad9"/><img src="https://img.shields.io/badge/PushToTalk-Black?style=flat&logo=swift&logoColor=black&color=%F6D23B"/>
 
 위와 같이 배지를 사용하여 더 풍성한 Readme를 만들 수 있습니다.
 [참조](https://shields.io/)
