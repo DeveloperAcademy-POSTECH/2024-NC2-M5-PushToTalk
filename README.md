@@ -1,6 +1,6 @@
 # 2024-NC2-M5-PushToTalk
 
-
+**리드미 정리 전입니다. 빌드는 main 브랜치에서 가능합니다!**
 
 
 # :iphone: [Project/App Name]
