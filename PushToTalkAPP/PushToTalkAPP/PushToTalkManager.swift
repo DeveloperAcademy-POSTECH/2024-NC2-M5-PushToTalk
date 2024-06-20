@@ -9,6 +9,7 @@ import SwiftUI
 import PushToTalk
 import AVFoundation
 import Firebase
+//import FirebaseFirestore
 
 class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, PTChannelRestorationDelegate {
     var channelManager: PTChannelManager?
@@ -19,8 +20,25 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
     @Published var activeSpeaker: String = ""
     let db = Firestore.firestore()
     
+    func fetchDeviceTokenFromFirestore(userId: String, completion: @escaping (String?) -> Void) {
+        let db = Firestore.firestore()
+        let docRef = db.collection("users").document(userId)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let data = document.data()
+                let token = data?["token"] as? String
+                completion(token)
+            } else {
+                print("Document does not exist")
+                completion(nil)
+            }
+        }
+    }
+    
+    
+    
     func sendPushNotificationToClient(token: String, activeSpeaker: String) {
-        // Replace <The certificate key name>.pem with your certificate key name
         let certificateKey = "PushToTalkApp.pem" //적용됨
         
         // Prepare the JSON payload
@@ -74,6 +92,19 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             }
     }
     
+    func sendNotificationButtonTapped() {
+        let userId = "exampleUserId" // 실제 사용자 ID로 교체
+
+        fetchDeviceTokenFromFirestore(userId: userId) { token in
+            if let token = token {
+                self.sendPushNotificationToClient(token: token, activeSpeaker: "Speaker Name")
+            } else {
+                print("Failed to fetch device token")
+            }
+        }
+
+    }
+    
     func initialize() {
         requestMicrophoneAccess { granted in
             if granted {
@@ -113,7 +144,6 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             }
         } catch {
             print("Failed to initialize channel manager: \(error)")
-            // Handle error as needed
         }
     }
     
@@ -147,9 +177,9 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             try await db.collection("channels").document(channelUUID.uuidString).setData(["isTalking": false])
             listenToChannelChanges(channelUUID: channelUUID)
             
-            // Send push notification to all users in the channel
-            let token = "<device_token>"  // Replace with actual device token
-            let activeSpeakerName = "Your Active Speaker Name"  // Replace with actual active speaker name
+            // 채널 내 모든 사용자에게 알림
+            let token = "<device_token>" //기기 토큰으로 바꾸기
+            let activeSpeakerName = "Your Active Speaker Name" //스피커 이름 바꾸기
             sendPushNotificationToClient(token: token, activeSpeaker: activeSpeakerName)
         } catch {
             print("Failed to join channel: \(error)")
@@ -185,7 +215,7 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
         }
     }
     
-    ///채널을 떠나는 함수
+    ///오디오 세션 비활성화 
     func deactivateAudioSession() {
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -197,6 +227,8 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             }
         }
     }
+    
+    ///채널을 떠나는 함수
     func leaveChannel() async {
         guard let channelManager = self.channelManager, let channelUUID = self.channelUUID else {
             DispatchQueue.main.async {
@@ -280,7 +312,7 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
             return
         }
         channelManager.requestBeginTransmitting(channelUUID: channelUUID)
-        //        db.collection("channels").document(channelUUID.uuidString).updateData(["isTalking": true])
+        db.collection("channels").document(channelUUID.uuidString).updateData(["isTalking": true])
         DispatchQueue.main.async {
             self.isTalking = true
         }
@@ -306,7 +338,8 @@ class PushToTalkManager: NSObject, ObservableObject, PTChannelManagerDelegate, P
         db.collection("channels").document(channelUUID.uuidString).updateData(["isTalking": false])
         DispatchQueue.main.async {
             self.isTalking = false
-        }        //        deactivateAudioSession()
+        }        
+        deactivateAudioSession()
     }
     ///음성 전송 중단을 시작할 수 없을 때
     func channelManager(_ channelManager: PTChannelManager,

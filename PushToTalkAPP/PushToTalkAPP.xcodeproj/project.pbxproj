@@ -25,7 +25,6 @@
 		895327E82C21DB4E0092C6EA /* CustomAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */; };
 		895327EB2C228B5E0092C6EA /* PushToTalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327EA2C228B5E0092C6EA /* PushToTalkView.swift */; };
 		895327ED2C22B11F0092C6EA /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895327EC2C22B11F0092C6EA /* AudioSession.swift */; };
-		895327F12C23ABE10092C6EA /* PushToTalkApp.pem in Resources */ = {isa = PBXBuildFile; fileRef = 895327F02C23ABE10092C6EA /* PushToTalkApp.pem */; };
 		B8F3CD572C217C46000B101C /* TallkBeforePushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		895327E72C21DB4E0092C6EA /* CustomAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertModifier.swift; sourceTree = "<group>"; };
 		895327EA2C228B5E0092C6EA /* PushToTalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushToTalkView.swift; sourceTree = "<group>"; };
 		895327EC2C22B11F0092C6EA /* AudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
-		895327F02C23ABE10092C6EA /* PushToTalkApp.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushToTalkApp.pem; sourceTree = "<group>"; };
 		B8F3CD562C217C46000B101C /* TallkBeforePushView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TallkBeforePushView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +83,6 @@
 		895327AB2C2137020092C6EA /* PushToTalkAPP */ = {
 			isa = PBXGroup;
 			children = (
-				895327F02C23ABE10092C6EA /* PushToTalkApp.pem */,
 				895327DE2C21A5280092C6EA /* GoogleService-Info.plist */,
 				895327C12C2138230092C6EA /* Info.plist */,
 				895327C02C2138080092C6EA /* PushToTalkAPP.entitlements */,
@@ -200,7 +197,6 @@
 			files = (
 				895327BF2C2137EA0092C6EA /* DOSSaemmul.ttf in Resources */,
 				895327B42C2137040092C6EA /* Preview Assets.xcassets in Resources */,
-				895327F12C23ABE10092C6EA /* PushToTalkApp.pem in Resources */,
 				895327DF2C21A5280092C6EA /* GoogleService-Info.plist in Resources */,
 				895327B12C2137040092C6EA /* Assets.xcassets in Resources */,
 			);
