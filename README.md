@@ -28,8 +28,8 @@ Attach videos if you are available
 
 <img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/> <img src="https://img.shields.io/badge/SwiftUI-Black?style=flat&logo=swift&logoColor=black&color=%23096ad9"/>
 
-//위와 같이 배지를 사용하여 더 풍성한 Readme를 만들 수 있습니다.
-//[참조](https://shields.io/)
+위와 같이 배지를 사용하여 더 풍성한 Readme를 만들 수 있습니다.
+[참조](https://shields.io/)
 
 
 ## :people_hugging: Authors
