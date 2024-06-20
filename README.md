@@ -26,7 +26,7 @@ Attach videos if you are available
 
 ## :sparkles: Skills & Tech Stack
 
-ex) <img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/>, SwiftUI
+<img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/>, SwiftUI
 
 위와 같이 배지를 사용하여 더 풍성한 Readme를 만들 수 있습니다.
 [참조](https://shields.io/)
@@ -34,4 +34,4 @@ ex) <img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&lo
 
 ## :people_hugging: Authors
 
-@username, @username, @username, @username, @username, @username
+@darrongzzang, @yejibaek
